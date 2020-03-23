@@ -1,5 +1,3 @@
-console.log('Client side javascript is loaded');
-
 const fetchWeather = location => {
     fetch('http://localhost:3000/weather?address=' + encodeURIComponent(location)).then( response => {
         response.json().then( data => {
