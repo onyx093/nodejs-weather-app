@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
             //console.log(response.data.error);
         }
         else{
-            callback(undefined, `${data.daily.data[0].summary} It is currently ${data.currently.temperature} degrees out there, there is ${data.currently.precipProbability}% chance of rain`);
+            callback(undefined, `${data.daily.data[0].summary} It is currently ${data.currently.temperature} degrees out there, there is ${(data.currently.precipProbability)*100}% chance of rain with visibility of ${data.currently.visibility}%`);
         }
     }).catch( error => {
         callback('Unable to connect to the weather service', undefined);
